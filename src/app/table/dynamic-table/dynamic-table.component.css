@@ -1,0 +1,129 @@
+.td1{
+    font-size: 12px;
+    font-weight: 600;
+}
+.table-responsive {
+    overflow-x: auto;
+  }
+  
+  @media (max-width: 767px) {
+    .table-responsive {
+      width: 100%;
+      margin-bottom: 15px;
+      overflow-y: hidden;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+      border: 1px solid #dddddd;
+    }
+    
+    .table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    
+    .table th,
+    .table td {
+      white-space: nowrap;
+    }
+  }
+
+  
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 82%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  max-height: 80%; 
+  overflow-y: auto;
+  background-color: none;
+  padding: 20px; 
+}
+ 
+.modal::-webkit-scrollbar {
+  width: 8px;
+
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #2D2D2D;
+  border-radius: 10px;
+}
+
+.modal::-webkit-scrollbar-track {
+  background-color: #ffff;
+}
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .modal {
+      width: 100%;
+      left: 50%;
+      overflow-x: auto;
+      padding: 20px; /* Add padding for better mobile display */
+    }
+  }
+  @media (max-width: 992px) {
+    .modal {
+      width: 100%;
+      left: 50%;
+      overflow-x: auto;
+      padding: 20px;
+    }
+  }
+  @media (max-width: 1024px) {
+    .modal {
+      width: 100%;
+      left: 50%;
+      overflow-x: auto;
+      padding: 20px;
+    }
+  }
+  /* Center the modal on mobile screens */
+  @media (max-width: 576px) {
+    .modal {
+      left: 50%;
+      transform: translateX(-50%);
+      overflow-x: auto;
+      top:20px
+    }
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #151719;
+   
+  }
+  @media (max-width: 768px) {
+    .modal-content {
+        width: fit-content;
+    }
+  }
+  @media (max-width: 576px) {
+    .modal-content {
+        width: fit-content;
+    }
+  }
+  .close {
+    color: #151719;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+.price-btn:hover{
+color: #fff;
+background-color: #151719;
+border-radius: 20px;
+border: none;
+text-align: center;
+}

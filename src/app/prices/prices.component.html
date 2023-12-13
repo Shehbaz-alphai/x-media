@@ -1,0 +1,44 @@
+<section
+  class="d-xl-flex flex-row p-relative pb-5 pb-xl-0 vh-xl-100 min-vh-xl-100 justify-content-center align-items-center bg-color-light"
+>
+  <div
+    class="vw-xl-25 custom-ws-initial min-vh-xl-100 d-xl-flex align-items-center"
+  >
+  <div class="p-5 w-100">
+    <h5 class="mt-4 mt-xl-0" style="font-weight: 600; color: #000;">At Xmedia</h5>
+    <h2 class="pt-2" style="font-weight: 800; font-size: xx-large; color: #000;">PRICING & PLAN</h2>
+
+    <p class="pt-3" style="color: #000;">
+      We provide much types of plan for your purpose with an affordable.
+    </p>
+
+    <!-- <a class="custom-link-1 pt-5" style="font-weight: 600; color: #000;">Register today </a> -->
+  </div>
+    <!-- <div class="p-5 w-100">
+      <h5 class="mt-4 mt-xl-0">At Xmedia</h5>
+      <h2 class="pt-2">Pricing & Plan</h2>
+
+      <p class="lead pt-2">
+        We provide much types of plan for your purpose with an affordable.
+      </p>
+
+      <a class="custom-link-1 pt-2">Register Today </a>
+    </div> -->
+  </div>
+  <div
+    class="min-vw-xl-50 custom-ws-initial min-vh-xl-100 d-flex align-items-center">
+    <div class="w-100">
+      <div class="container-fluid">
+        <app-dynamic-table
+          *ngFor="let service of services;let i = index "
+          [list]="services"
+          [serviceName]="service.serviceName"
+          [packages]="packages"
+          [services]="service.services"
+          [prices]="service.prices"
+          [index]="i"
+        ></app-dynamic-table>
+      </div>
+    </div>
+  </div>
+</section>

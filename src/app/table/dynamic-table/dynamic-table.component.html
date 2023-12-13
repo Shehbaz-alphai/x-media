@@ -1,0 +1,118 @@
+<div class="pt-2">
+  <div 
+    class="align-items-center d-flex justify-content-between px-4 py-1 rounded-5"
+    (click)="toggleRow2Visibility(index)"
+    style="background-color: #151719"
+  >
+    <h6 class="text-white" style="font-size: 14px" >{{ serviceName }}</h6>
+    <a>
+      <i
+        [class]="
+            list[index]?.isVisible
+            ? 'fa-solid fa-chevron-up text-white'
+            : 'fa-solid fa-chevron-down text-white'
+        "
+      ></i>
+    </a>
+  </div>
+  <div  class="modal"   [ngClass]="{'d-block': list[index]?.isVisible, 'd-none': !list[index]?.isVisible}">
+    <div class="modal-content">
+        <div class="d-flex justify-content-between align-items-center px-2">
+            <span class="" style="font-weight: 600; color: #151719;" >{{ serviceName }}</span>
+            <span class="close" (click)="closeModal(index)">&times;</span>
+        </div>
+     
+      <table class="table">
+        <thead>
+          <tr>
+            <th style="font-size: 12px">Service</th>
+            <th *ngFor="let package of packages" style="font-size: 12px">
+              {{ package }}
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let service of services; let i = index"
+            [ngClass]="{ 'odd-row': i % 2 !== 0 }"
+          >
+          <ng-template [ngIf]="service.isSingline===true" [ngIfElse]="elseBlock">
+            <td class="td1 hover-text">
+                    {{ service.name }}
+              </td>
+              <td class="td1"  colspan="4" style="text-align: center;">
+                <p style="text-align: center; color: #151719; font-weight: 600;" [matTooltip]="service.toolTip" matTooltipPosition="above">{{ service.headername }}</p>
+              </td>
+          </ng-template>
+          <ng-template #elseBlock>
+            <td class="td1">
+                <div [matTooltip]="service.toolTip" matTooltipPosition="above">{{ service.name }}</div>
+              </td>
+          </ng-template>
+            <td
+              *ngFor="let icon of service.icons" class="" style="font-size: 12px">
+              <ng-container *ngIf="getIconValue(icon) === 'true'">
+                <svg
+                  class="w-2 h-2 text-green-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 16 12"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M1 5.917 5.724 10.5 15 1.5"
+                  />
+                </svg>
+              </ng-container>
+              <ng-container *ngIf="getIconValue(icon) === 'false'">
+                <svg
+                  class="w-2 h-2 text-red-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+              </ng-container>
+              <ng-container *ngIf="getIconValue(icon) !== 'true' && getIconValue(icon) !== 'false'"
+              >
+              <ng-template [ngIf]="service.strong===true" [ngIfElse]="elseStrong">
+                <strong >
+                  {{ getIconValue(icon) }}
+                </strong>
+              </ng-template>
+              <ng-template #elseStrong>
+                {{ getIconValue(icon) }}
+              </ng-template>
+              </ng-container>
+            
+          
+            </td>
+          </tr>
+          <tr>
+            <td class="td1">Price</td>
+            <td *ngFor="let price of prices" class="td1 ">
+              <button class="price-btn" style="padding: 10px;" (click)="addPrice(serviceName,price.tier,price.price)">
+                {{ price.price }}
+              </button>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+  </div>
+
+</div>

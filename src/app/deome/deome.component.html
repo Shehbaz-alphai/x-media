@@ -1,0 +1,49 @@
+<div class="p-5 w-100">
+    <div class="container-fluid">
+      <div class="pt-2" *ngFor="let service of jsonservices" >
+        <div class="d-flex justify-content-between align-items-center bg-gray-600 p-3" >
+          <h1 class="text-white">{{service.SocialMediaMarketing.title}}</h1>
+          <a (click)="toggleRow2Visibility()"
+            class="text-color-dark font-weight-semibold text-4 line-height-4">
+            <i [class]="isRow2Visible ? 'fa-solid fa-chevron-up text-white' : 'fa-solid fa-chevron-down text-white'"></i>
+          </a>
+        </div>
+        <table class="table" *ngIf="isRow2Visible">
+          <thead>
+            <tr>
+              <th style="font-size: 12px">Service</th>
+              <th *ngFor="let package of packages" style="font-size: 12px">{{ package }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let service of jsonservices[0].SocialMediaMarketing.packages[0].services">
+              <td class="td1">{{ service.name }}</td>
+              <td class="td1">{{ service.icon }}</td>
+            
+              <td  *ngFor="let price of jsonservices[0].SocialMediaMarketing.packages[0].price" class="td1">{{ price }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+<!-- 
+  <div *ngFor="let category of jsonData.packages | keyvalue">
+    <h2>{{ category.key }}</h2>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th *ngFor="let package of category.value">{{ package.name }}</th>
+      </tr>
+      <tr *ngFor="let service of category.value[0].services">
+        <td>{{ service }}</td>
+        <td *ngFor="let package of category.value">
+          <td>{{ package.services.includes(service) ? '✓' : '' }}</td>
+        </td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td *ngFor="let package of category.value">{{ package.price }}</td>
+      </tr>
+    </table>
+  </div> -->

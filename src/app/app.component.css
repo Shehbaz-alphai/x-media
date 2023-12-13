@@ -1,0 +1,57 @@
+
+.title-text{
+    font-weight: bold !important;
+    font-family: poppins, Arial, sans-serif !important;
+}
+.btn-register{
+    background-color: yellow;
+  border: 1px solid black;
+}
+.span--1{
+    font-size: 12px;
+    font-weight: 100;
+    color: black;
+    
+}
+@media (max-width: 576px) {
+    .xlogogo{
+display: flex !important;
+justify-content: center !important;
+    }
+  }
+  @media (max-width: 576px) {
+    .parent-container {
+        display: flex;
+        flex-direction: column; 
+      }
+    
+    .order-1 {
+      order: 2 !important;
+    }
+  
+    .order-2 {
+      order: 1 !important;
+    }
+  }
+  @media (max-width: 576px) {
+    #about{
+        display: none !important;
+      
+      }
+    .hearder-h2{
+        font-weight: 600!important;
+    }
+    .trusted{
+        font-size: 2rem !important
+    }
+  .h-3{
+    font-size: 2rem !important
+  }
+  .p-3{
+   margin-top: 10px !important
+  }
+  }
+.trusted{
+    font-size: 3rem
+}
+  
