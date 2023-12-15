@@ -20,10 +20,12 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="header-column justify-content-end">
-                  <div class="header-row p-relative left-10">
+                <div class="header-column justify-content-end ">
+                 
+                  <div class="header-row  left-10 togle-btn">
+                      <i class="fa fa-align-justify text-white" aria-hidden="true" (click)="toggleNavigation()"></i>
                     <div
-                      class="header-nav header-nav-links header-nav-light-text order-2 order-lg-1"
+                      class="header-nav header-nav-links header-nav-light-text order-2 order-lg-1" [ngStyle]="{ 'display': isNavVisible ? 'block' : 'none' }"
                     >
                       <div
                         class="header-nav-main header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-2 header-nav-main-sub-effect-1"
@@ -53,10 +55,7 @@
                             <li class="dropdown">
                               <a href="#contact" data-hash class="nav-link">
                                 Contact
-                                <span
-                                  class="btn btn-default text-color-light bg-primary btn-circle border-0 btn-md ms-2"
-                                  ><i class="fas fa-arrow-right"></i
-                                ></span>
+                                
                               </a>
                             </li>
                           </ul>
@@ -64,7 +63,7 @@
                       </div>
                     </div>
                   </div>
-                </div> -->
+                </div>
               </div>
             </div>
           </div>
@@ -852,7 +851,7 @@
                   >
                     <div class="thumb-info-wrapper">
                       <img
-                        src="assets/img/demos/creative-agency-1/projects/project-1.jpg"
+                        src="assets/img/demos/creative-agency-1/projects/5.jpg"
                         class="img-fluid"
                         alt=""
                       />
@@ -874,7 +873,7 @@
                   >
                     <div class="thumb-info-wrapper">
                       <img
-                        src="assets/img/demos/creative-agency-1/projects/project-2.jpg"
+                        src="assets/img/demos/creative-agency-1/projects/Mumtalikati.png"
                         class="img-fluid"
                         alt=""
                       />
@@ -888,7 +887,7 @@
                   >
                     <div class="thumb-info-wrapper">
                       <img
-                        src="assets/img/demos/creative-agency-1/projects/project-3.jpg"
+                        src="assets/img/demos/creative-agency-1/projects/InvestiwithRadial.jpg"
                         class="img-fluid"
                         alt=""
                       />

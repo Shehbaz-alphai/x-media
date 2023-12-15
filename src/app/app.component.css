@@ -50,8 +50,15 @@ justify-content: center !important;
   .p-3{
    margin-top: 10px !important
   }
+  .togle-btn{
+    opacity: 1 !important;
+  }
+
   }
 .trusted{
     font-size: 3rem
 }
-  
+.togle-btn{
+  opacity: 0
+}
+

@@ -73,7 +73,11 @@ export class AppComponent {
     // Add more courses as needed
   ];  
   isRow2Visible: boolean = false;
+  isNavVisible = false;
 
+  toggleNavigation() {
+    this.isNavVisible = !this.isNavVisible;
+  }
   constructor(
     private emailService: ChatboxService,
     private rxFormBuilder: RxFormBuilder,
